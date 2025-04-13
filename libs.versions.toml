@@ -1,8 +1,9 @@
 [versions]
-androidGradlePlugin = "8.4.2" # Or your current AGP version (check Android Studio)
+androidGradlePlugin = "8.9.0" # Or your current AGP version (check Android Studio)
 kotlin = "2.0.21"          # Or your current Kotlin version (check Android Studio)
 composeBom = "2025.04.00"   # Example Compose BOM version - check latest stable
 coreKtx = "1.16.0"         # Example - check your module build.gradle.kts
+firebaseBom = "33.12.0"
 lifecycleKtx = "2.8.7"     # Example - check your module build.gradle.kts
 activityCompose = "1.10.1"  # Example - check your module build.gradle.kts
 androidxUi = "1.7.8"        # Example - check your module build.gradle.kts
@@ -12,7 +13,8 @@ material3 = "1.3.2"        # Example - check your module build.gradle.kts
 junit = "4.13.2"           # Example - check your module build.gradle.kts
 androidxJunit = "1.2.1"      # Example - check your module build.gradle.kts
 espressoCore = "3.6.1"      # Example - check your module build.gradle.kts
-androidxUiTestJunit4 = "1.7.8" # Example - check your module build.gradle.kts
+androidxUiTestJunit4 = "1.7.8"
+navigationCompose = "2.8.9" # Example - check your module build.gradle.kts
 
 [libraries]
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
@@ -29,9 +31,13 @@ androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", vers
 androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidxUiTestJunit4" }
 androidx-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "androidxUi" } # Assuming same version as ui
 androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "androidxUi" } # Assuming same version as ui
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
+firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" } # Assuming Compose plugin version matches Kotlin
-#google-services = { id = "com.google.gms.google-services", version = "..." } # Uncomment and add version if you use Firebase
+google-services = { id = "com.google.gms.google-services", version = "4.4.2" } # Uncomment and add version if you use Firebase
