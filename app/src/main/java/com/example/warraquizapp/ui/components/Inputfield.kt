@@ -11,14 +11,15 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun InputField(
-    value: MutableState<String>,
+    value: String,
     label: String,
+    onValueChange: (String) -> Unit,
     isPasswordVisible: MutableState<Boolean>? = null,
     onVisibilityChange: (() -> Unit)? = null
 ) {
     OutlinedTextField(
-        value = value.value,
-        onValueChange = { value.value = it },
+        value = value,
+        onValueChange = onValueChange,
         label = { Text(label) },
         modifier = Modifier
             .fillMaxWidth()
